@@ -27,7 +27,7 @@ export default function SmurfForm () {
                     name="height"
                     placeholder="Enter Smurf's Height"
                     onChange={handleChanges}/>
-                <button>Add Smurf</button>
+                <button>Create Smurf</button>
             </form>
         </div>
     )
