@@ -16,21 +16,21 @@ export default function SmurfForm () {
         <div>
             <form onSubmit={submitSmurf}>
                 <h2>Create a Smurf</h2>
-                <lable>Smurf's Name:</lable>
+                <label>Smurf's Name:</label>
                 <input
                     type="text"
                     value={values.name}
                     name="name"
                     placeholder="Enter Smurf's Name"
                     onChange={handleChanges}/>
-                <lable>Smurf's Age</lable>
+                <label>Smurf's Age</label>
                 <input
                     type="text"
                     value={values.age}
                     name="age"
                     placeholder="Enter Smurf's Age"
                     onChange={handleChanges}/>
-                <lable>Smurf's Height</lable>
+                <label>Smurf's Height</label>
                  <input
                     type="text"
                     value={values.height}

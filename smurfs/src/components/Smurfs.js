@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 
 const Smurfs = ({getSmurf, smurfs, isFetching}) => {
-
+    console.log("here is the console",smurfs)
     useEffect(()=> {
         getSmurf();
     }, [getSmurf])
@@ -11,7 +11,9 @@ const Smurfs = ({getSmurf, smurfs, isFetching}) => {
     }
 
     return (
-        <div>{smurfs.map((smurf, key)=> {
+        <div>{smurfs.map((smurf, key) => {
+           
+
             return (
                 <div className="Smurfs" key={key}>
                     <p>Smurf's Name: {smurf.name}</p>
