@@ -9,35 +9,35 @@ const initialValue = {
 
 export default function SmurfForm () {
 
- const [values, handleChanges, submitSmurf] = useForm(initialValue, 'smurfForm')
+ const [smurfs, handleChanges, submitSmurf] = useForm(initialValue, 'smurfForm')
 
     
     return (
         <div>
             <form onSubmit={submitSmurf}>
-                <h2>Create a Smurf</h2>
-                <label>Smurf's Name:</label>
+                <h2>Create a Smurf!</h2>
+                <label>Smurf's Name: </label>
                 <input
                     type="text"
-                    value={values.name}
+                    value={smurfs.name}
                     name="name"
                     placeholder="Enter Smurf's Name"
                     onChange={handleChanges}/>
-                <label>Smurf's Age</label>
+                <label>Smurf's Age: </label>
                 <input
                     type="text"
-                    value={values.age}
+                    value={smurfs.age}
                     name="age"
                     placeholder="Enter Smurf's Age"
                     onChange={handleChanges}/>
-                <label>Smurf's Height</label>
+                <label>Smurf's Height: </label>
                  <input
                     type="text"
-                    value={values.height}
+                    value={smurfs.height}
                     name="height"
                     placeholder="Enter Smurf's Height"
                     onChange={handleChanges}/>
-                <button type="submit">Create Smurf</button>
+                <button>Create Smurf</button>
             </form>
         </div>
     );

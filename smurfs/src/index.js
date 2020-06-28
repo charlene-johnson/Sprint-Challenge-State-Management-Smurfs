@@ -8,7 +8,7 @@ import {smurfReducer} from './reducers/reducer';
 import thunk from 'redux-thunk';
 
 const logger = ({getState}) => next => action => {
-    console.log("Dispatching action", action);
+    console.log("Dispatching action", action); next(action);
 };
 
 let store = createStore(smurfReducer, applyMiddleware(logger, thunk));
