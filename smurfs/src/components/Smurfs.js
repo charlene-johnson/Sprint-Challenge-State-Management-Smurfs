@@ -1,11 +1,13 @@
 import React, {useEffect} from "react";
+import {connect} from 'react-redux'
+import {getSmurf} from '../actions/action';
 
 
 const Smurfs = ({getSmurf, smurfs, isFetching}) => {
     
     useEffect(()=> {
         getSmurf();
-    }, [getSmurf])
+    }, [])
 console.log("smurflog",smurfs)
 
     if(isFetching) {
@@ -25,6 +27,17 @@ console.log("smurflog",smurfs)
             )
         })}</div>
         )
-    }   
+    }  
+    const mapToStateProps = state => {
+        console.log(state)
+        return {
+          smurfs: state.smurfs,
+          isFetching: state.isFetching,
+          error: state.error
+        };
+      };
        
-export default Smurfs;
+    
+const mapDispatchToProps = {getSmurf}
+
+export default connect(mapToStateProps, mapDispatchToProps)(Smurfs);

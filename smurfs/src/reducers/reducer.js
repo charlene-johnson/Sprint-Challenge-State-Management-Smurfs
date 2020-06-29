@@ -37,7 +37,7 @@ export const smurfReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isFetching: false,
-                error: "",
+                error: '',
                 smurfs: action.payload
             };
         default:

@@ -1,16 +1,25 @@
-import React from 'react';
-import {useForm} from '../hooks/useForm';
+import React, {useState} from 'react';
+import { connect } from 'react-redux';
+import {getSmurf, addSmurf} from '../actions/action';
 
-const initialValue = {
-    name: '',
-    age: '',
-    height: ''
+
+const SmurfForm = ({addSmurf}) => {
+ 
+ const [smurfs, setSmurfs] = useState ('')
+
+ const handleChanges = e => {
+    setSmurfs({
+        ...smurfs,
+        [e.target.name]: e.target.value
+    });
 };
 
-export default function SmurfForm () {
-
- const [smurfs, handleChanges, submitSmurf] = useForm(initialValue, 'smurfForm')
-
+const submitSmurf = e => {
+    e.preventDefault();
+    addSmurf(smurfs)
+    console.log(smurfs)
+    setSmurfs({name: '', age: '', height: ''})
+};
     
     return (
         <div>
@@ -42,3 +51,8 @@ export default function SmurfForm () {
         </div>
     );
 };
+
+
+  const mapDispatchToProps = {getSmurf, addSmurf}
+   
+export default connect(null, mapDispatchToProps) (SmurfForm)
