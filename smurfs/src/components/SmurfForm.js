@@ -1,7 +1,43 @@
 import React, {useState} from 'react';
 import { connect } from 'react-redux';
 import {getSmurf, addSmurf} from '../actions/action';
+import styled from 'styled-components';
 
+const Forms = styled.form `
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin: 1%;
+`
+const Label = styled.label `
+    margin-bottom: -10px;
+    text-align: center;
+    width: 275px;
+    font-family: 'Pangolin', cursive;
+    font-size: 2rem;
+    color: #230A59
+`
+const Input = styled.input `
+    width: 200px;
+    padding: 8px 26px;
+    margin: 11.5px;
+    border: 1px solid #829FD9;
+    border-radius 4px;
+`
+const Button = styled.button ` 
+    width: 200px;
+    padding: 8px;
+    background-color: #3E38F2;
+    border: 1px solid #829FD9;
+    border-radius 4px;
+    margin-top: 1.6%;
+    font-family: 'Pangolin', cursive;
+    font-size: 1.5rem;
+
+    &:hover {
+        background-color: #829FD9;
+    }
+`
 
 const SmurfForm = ({addSmurf}) => {
  
@@ -23,31 +59,31 @@ const submitSmurf = e => {
     
     return (
         <div>
-            <form onSubmit={submitSmurf}>
+            <Forms onSubmit={submitSmurf}>
                 <h2>Create a Smurf!</h2>
-                <label>Smurf's Name: </label>
-                <input
+                <Label>Smurf's Name: </Label>
+                <Input
                     type="text"
                     value={smurfs.name}
                     name="name"
                     placeholder="Enter Smurf's Name"
                     onChange={handleChanges}/>
-                <label>Smurf's Age: </label>
-                <input
+                <Label>Smurf's Age: </Label>
+                <Input
                     type="text"
                     value={smurfs.age}
                     name="age"
                     placeholder="Enter Smurf's Age"
                     onChange={handleChanges}/>
-                <label>Smurf's Height: </label>
-                 <input
+                <Label>Smurf's Height: </Label>
+                 <Input
                     type="text"
                     value={smurfs.height}
                     name="height"
                     placeholder="Enter Smurf's Height"
                     onChange={handleChanges}/>
-                <button>Create Smurf</button>
-            </form>
+                <Button>Create Smurf</Button>
+            </Forms>
         </div>
     );
 };
